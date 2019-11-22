@@ -1,0 +1,24 @@
+// デバック定義用のファイル
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // 使用するデバッガ。node go phpなど
+      "type": "node",
+      // launchかattachがある。起動するか、起動中のアプリに接続するかを選択
+      "request": "launch",
+      // デバッガビューのドロップダウンリストに表示される名前
+      "name": "Launch TypeScript",
+      // デバッグセッションを始める前に実行するタスクのラベル
+      "preLaunchTask": "Compile TypeScript",
+      // デバッグされるファイルの作業フォルダーの絶対パスを指定
+      "cwd": "${workspaceFolder}",
+      // 起動するプログラムや実行可能ファイルの絶対パス
+      "program": "${file}",
+      // 生成されたJSファイルのいちをデバッガに明示的に教える。同じ場所にあるソースマップファイルによりTSファイルでデバッグが可能になる
+      "outFiles": [
+        "${workspaceFolder}/build/**/*.js"
+      ]
+    }
+  ]
+}
