@@ -1,0 +1,5 @@
+sample.ts
+build/js/sample.js
+build/js/sample.js.map
+node-modules
+.vscode
