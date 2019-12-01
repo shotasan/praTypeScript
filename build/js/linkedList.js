@@ -29,14 +29,22 @@ var LinkedList = /** @class */ (function () {
     };
     LinkedList.prototype.printStationList = function () {
         var idx = this.top;
-        while (idx != -1) {
+        while (idx !== -1) {
             console.log(this.list[idx].name + " \u2192 ");
             idx = this.list[idx].next;
         }
+    };
+    // 要素の挿入
+    LinkedList.prototype.insertStationList = function (insIdx, insName, prevIdx) {
+        this.list[insIdx].name = insName;
+        this.list[insIdx].next = this.list[prevIdx].next;
+        this.list[prevIdx].next = insIdx;
     };
     return LinkedList;
 }());
 var list = new LinkedList();
 list.initStationList();
+list.printStationList();
+list.insertStationList(5, "品川", 2);
 list.printStationList();
 //# sourceMappingURL=linkedList.js.map

@@ -33,13 +33,22 @@ class LinkedList {
   printStationList() {
     let idx: number = this.top;
 
-    while (idx != -1) {
+    while (idx !== -1) {
       console.log(`${this.list[idx].name} → `);
       idx = this.list[idx].next;
     }
+  }
+
+  // 要素の挿入
+  insertStationList(insIdx: number, insName: string, prevIdx: number) {
+    this.list[insIdx].name = insName;
+    this.list[insIdx].next = this.list[prevIdx].next
+    this.list[prevIdx].next = insIdx;
   }
 }
 
 let list = new LinkedList();
 list.initStationList();
+list.printStationList();
+list.insertStationList(5, "品川", 2);
 list.printStationList();
