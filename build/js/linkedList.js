@@ -40,11 +40,17 @@ var LinkedList = /** @class */ (function () {
         this.list[insIdx].next = this.list[prevIdx].next;
         this.list[prevIdx].next = insIdx;
     };
+    // 要素の削除
+    LinkedList.prototype.deleteStationList = function (delIdx, prevIdx) {
+        this.list[prevIdx].next = this.list[delIdx].next;
+    };
     return LinkedList;
 }());
 var list = new LinkedList();
 list.initStationList();
 list.printStationList();
 list.insertStationList(5, "品川", 2);
+list.printStationList();
+list.deleteStationList(5, 2);
 list.printStationList();
 //# sourceMappingURL=linkedList.js.map

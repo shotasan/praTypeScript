@@ -45,10 +45,17 @@ class LinkedList {
     this.list[insIdx].next = this.list[prevIdx].next
     this.list[prevIdx].next = insIdx;
   }
+
+  // 要素の削除
+  deleteStationList(delIdx: number, prevIdx: number) {
+    this.list[prevIdx].next = this.list[delIdx].next;
+  }
 }
 
 let list = new LinkedList();
 list.initStationList();
 list.printStationList();
 list.insertStationList(5, "品川", 2);
+list.printStationList();
+list.deleteStationList(5, 2);
 list.printStationList();
